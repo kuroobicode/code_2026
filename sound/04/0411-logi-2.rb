@@ -11,6 +11,10 @@ bos_ll_piano_bm = "E:/sound/splice/Samples/packs/Lavish Lofi & Hip Hop/Black_Oct
 so_ga_baffalo_bm = "E:/sound/splice/Samples/packs/Dreamgaze/SO_Dreamgaze/Loops/Piano/SO_GA_75_piano_acoustic_buffalo_Bmin.wav"
 trktrn_leaveyou_b = "E:/sound/splice/Samples/packs/City Sunrise Lo-Fi Hip Hop Pack Vol. 2/City_Sunrise_Lo-Fi_Hip_Hop_Pack_Vol._2/TRKTRN_Music_Loops/TRKTRN_Songstarters/TRKTRN_Songstarter_80_Leaveyou_B_bpm75.wav"
 
+# one time
+more_giraffes_d = "E:/sound/splice/Samples/packs/Pastel Pop by More Giraffes/MORE_GIRAFFES_labeled_processed/MORE_GIRAFFES_fx/MORE_GIRAFFES_fx_magictransformation_02_D.wav"
+esm_mallets = "E:/sound/splice/Samples/packs/Mobile Game/Mobile_Game/Short_Melodic_Stingers/ESM_Mallets_Objective_Complete_2_Mobile_App_Game_FX_Sound_Magic_Fantasy_Retro_Classic_Musical_Element_Transition_Chord_Simple_Hit_Designed.wav"
+
 
 #
 orbit_tape_flat = "E:/sound/splice/Samples/packs/Growing - organic lofi hip hop/Orbit_Sounds_-_Growing_-_organic_lofi_hip_hop/Loops/Drums/ORBIT_75_drum_loop_full_tape_float.wav"
@@ -25,8 +29,16 @@ live_loop :shs_haut_tape_d do
   sleep 32
 end
 
-
 #  ###############################################################
+
+# one time
+amp_esm_mallets = 0.25
+amp_esm_mallets = 0
+live_loop :esm_mallets do
+  sample esm_mallets ,amp: amp_esm_mallets
+  sleep 32
+end
+
 amp_so_np_elysium_bm = 0.75
 amp_so_np_elysium_bm = 0
 live_loop :so_np_elysium_bm do
