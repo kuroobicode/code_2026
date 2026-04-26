@@ -47,19 +47,12 @@ end
 amp_ds_scb_hyper_dsm = 0.75
 amp_ds_scb_hyper_dsm = 0
 live_loop :ds_scb_hyper_dsm do
-  sleep 58
+  sleep 48
   sample ds_scb_hyper_dsm, amp: amp_ds_scb_hyper_dsm
   sleep 8
 end
 
 # final riser
-amp_ds_scb_hyper_dsm = 0.75
-amp_ds_scb_hyper_dsm = 0
-live_loop :ds_scb_hyper_dsm do
-  sleep 58
-  sample ds_scb_hyper_dsm, amp: amp_ds_scb_hyper_dsm
-  sleep 8
-end
 
 
 #  ###############################################################
