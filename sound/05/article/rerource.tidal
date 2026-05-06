@@ -1,0 +1,63 @@
+
+d1 $ sound "bd sd hh sd"
+
+d1 (sound "bd sd hh sd")
+
+d1 $ fast 2 $ sound "bd sd hh sd"
+
+d1 $ (fast 2) $ sound "bd sd"
+
+d2 $ slow 2 $ sound "hh hh hh hh"
+
+d1 $ sound "bd [~ cp] bd ~"
+
+d1 $ every 4 rev $ sound "bd [~ cp] bd ~"
+
+
+stack
+  [ sound "bd ~ bd ~"
+  , slow 2 $ sound "hh hh hh hh"
+  ]
+
+
+d1 $ sometimes (fast 2) $ sound "bd sn cp hh"
+
+harbor = slow 4 $ sound "open ~ ~ close"
+metro  = n "3 3 3 3 2 2 2 2"
+grid   = every 8 rev $ sound "on on off on"
+
+mergeRhythms = foldr overlay silence
+city = mergeRhythms [harbor, metro, grid]
+
+harbor' = every 3 (fast 2) harbor
+metro'  = slow 2 metro
+grid'   = sometimes rev grid
+
+grid' = every 16 rev grid
+
+tram   = sound "go ~ go stop"
+bridge = slow 8 $ sound "up ~ ~ down"
+lights = every 4 (density 2) $ sound "dim lit l
+
+city =
+  mergeRhythms
+    [ harbor'
+    , metro'
+    , grid'
+    , tram
+    , bridge
+    , lights
+    ]
+
+
+polyCity :: [Pattern a] -> Pattern a
+polyCity =
+  foldr overlay silence
+  . map decenter
+
+city = polyCity [harbor, metro, grid, tram, bridge, lights]
+
+d1 $ fast 2 $ sound "bd sd hh sd"
+
+
+hash

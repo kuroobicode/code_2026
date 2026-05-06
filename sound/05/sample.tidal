@@ -1,0 +1,147 @@
+
+-- https://tidalcycles.org/docs/configuration/AudioSamples/default_library/
+
+https://github.com/tidalcycles/Dirt-Samples/
+https://tidalcycles.org/docs/reference/synthesizers/
+
+
+d1 "sn bd hh "
+
+d2 $ note (scale "minor" "2 3 5 7")
+  # s "superhammond"
+  # legato 0.5
+
+
+d1
+  $ jux (rev)
+  $ sound "bd sn:1 hh hh:3"
+
+d2 $ sound "drum" |+| n "1 2 3"
+
+d3 $ sound "drum" |+| n "6 [7 8] 9"
+
+d4 $ s "{bd bd bd bd, cp cp hh}"
+
+
+d5 $ n (slow 2 $ fmap (*7) $ run 8)
+  # s "supergong"
+  # decay "[1 0.2]/4"
+  # voice "[0.5 0]/8"
+
+d6 $ s "supertron"
+  # octave 2
+  # accelerate "1.12"
+
+d7 $ n "[0 11]/8" # "superfm" #octave 4
+  # amp1 1
+  # ratio2 2.5
+  # mod12 4
+  # egrate11 0.3 # eglevel11 1 -- slow attack
+  # egrate12 1  # eglevel12 0.1 -- fast decay to 1/2 amp
+  # egrate13 0.5 # eglevel13 0.8 -- 2nd amp swell
+  # egrate14 0.4 # eglevel14 0 -- decay of mod to 0
+
+d8 $ freq "<200 300> <400 800>" #s "superfm"
+  -- # amp1 1 # amp3 1
+  -- # mod12 2 
+  -- # ratio2 "<8 4> 0.5 0.9 1.4 2.5"
+  -- # mod34 1 
+  -- # ratio3 4
+
+d1 $ slow 2 $ s "808bd" <| n (run 25) -- 25 rather similar 808 kicks!
+d1 $ slow 2 $ s "arpy" <| up "c'maj(3,8) f'maj(3,8) ef'maj(3,8,1) bf4'maj(3,8)" -- iya
+
+
+d1 $ s "linnhats" <| n (run 6) -- wisott
+
+d1 $ s "popkick" <| n (run 10) -- kicks, but also tuned-ish in there
+
+
+setcpu(140/60/4)
+let base = 0
+
+d1 $ s "supertron" 
+  # note "c4'min7"
+  -- # note "d4'min9"
+  -- |+| note base
+  -- |+| note "<0 12>/2"
+  |+| note "<1 4 3>/7"
+  # legato "0.5"
+  # attack "1"
+--  # delay "0.15" 
+  # crush "1"
+  # coarse "1 2"
+--  # room  "0 1 2"
+  # size "2"
+  # decay "[1 0.2]/4"
+--  # room (slow 8 $ line 0 0.9)
+  # lpf (range 200 5000 $ sine)
+
+  # octave 3
+  
+  # accelerate "0.2"
+
+
+--d2 $ s "superhammond" # note "[0 3 2]"
+
+-- d2 $ every 2 (0.25 <~) $ sound "bd*2 [bd:4  [~ lt] sn:3] lt:3 [ht mt*2]"
+d2 $ s "[bd hh]"
+d2 sillence
+
+hush
+
+d4 $ s "[~ hh ~ cp] [~ bd ~ cp] [~ ~ sn ~] [~ ~ ~ bd base:3] [bd [hh [cp sn:3] hh]] bd bd bd"
+# pan cosine # speed (sine + 0.5)
+
+d5 $ stack [
+  s"{~<clubkick:1 gabba:3>sn:1 hc*2 hc bd sn:2 hs}%16"
+  # shape 0.5 
+  # hpf 60 
+  # hpq 0.3
+  # delay 0.5 
+  # delayfb 0.3 
+  # lock "<1 2>" 
+-- # accelerate 4
+--  # coarse 5
+]
+
+--  #coarse 5
+
+
+--  # speed "0.7 1.4"
+--  # delay 0.5 $ delayfb 0.3 # lock "<1 2>" 
+--  ,whenmod 4 3 ((#accelerate 4).(#coarse 5))
+
+
+# speed "1 2 3"
+
+d3 $ s "supersaw" 
+  # note "f4'min9"
+  --|+| note "<4 3>/2"
+  # room "0.5" 
+  # gain "0.5"
+  --# "a e i o u"
+
+
+d8 $ s "superfm" # note "<~ 0 2 5 7 2 0 1 2>"
+  # delay 1.9
+  # delaytime (6/16)   -- dotted eighth
+  # delayfeedback 1.5
+  # room 1.6
+  # size 1.7
+
+
+d3 sillence
+
+d3 $ s "superhoover" <| up "c'minor(5,12) c'minor(2,5) f'minor(3,4)  d'minor2(2,7)" 
+  # octave 3
+  # accelerate "0.2"
+  # pan 0.5 
+
+
+  # accelerate "0.1"
+  # fast "3"
+
+
+
+hush
