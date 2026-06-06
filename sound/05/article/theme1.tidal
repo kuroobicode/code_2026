@@ -1,0 +1,29 @@
+d1 $ whenmod 4 3 ((# accelerate 4) . (# coarse 5))
+ $ s "{~<clubkick:1 gabba:3>sn:1 hc*2 hc bd sn:2 hs}%16"
+    # shape 0.5
+    # hpf 60
+    # hpq 0.3
+    # delay 0.5
+    # delayfb 0.3
+    # lock "<1 4>"
+
+d2 $ s "supertron" 
+  -- # note "c4'min7"
+  # note "d4'min9"
+  |+| note "<0 12>/3"
+  |+| note "<1 4 3>/7"
+  # legato "0.5 2"
+  # attack "3 6"
+  # lpf (range 200 5000 $ sine)
+  # octave 5
+  # crush "1"
+
+d3 $ s "superhoover"
+  <| up (fast 2 "c'minor(5,12) c'minor(2,5) f'minor(3,4)  d'minor2(2,7)")
+  # octave 3
+  # pan 0.5 
+  # accelerate "0.1"
+  # gain 1.5
+
+
+hush

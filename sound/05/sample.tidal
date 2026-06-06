@@ -62,23 +62,50 @@ let base = 0
 
 d1 $ s "supertron" 
   # note "c4'min7"
+  # legato "0.5"
+  # attack "1"
+
+let chords = note "~ ~ a'min7"
+
+d2 $ chords
+   # s "superpiano"
+   # sustain 4
+   # attack 0.5
+   # release 6
+   # room 1
+   # size 0.8
+
+d3 $ note "~ ~ d'min7"
+   # s "superhammond"
+   # sustain 1
+   # attack 1
+   # release 1.8
+   # gain 1.1
+
+d5 $ stack [
+  s "bd bd ~ bd",
+  s "~ ~ sd ~"      -- snare only on beat 3
+]
+
+hush
+
+d1 $ s "supertron" 
+  # note "c4'min7"
   -- # note "d4'min9"
   -- |+| note base
   -- |+| note "<0 12>/2"
   |+| note "<1 4 3>/7"
   # legato "0.5"
   # attack "1"
---  # delay "0.15" 
+  # delay "0.15" 
   # crush "1"
   # coarse "1 2"
---  # room  "0 1 2"
+  # room  "0 1 2"
   # size "2"
   # decay "[1 0.2]/4"
---  # room (slow 8 $ line 0 0.9)
+  # room (slow 8 $ line 0 0.9)
   # lpf (range 200 5000 $ sine)
-
-  # octave 3
-  
+  # octave 3 
   # accelerate "0.2"
 
 
@@ -101,9 +128,25 @@ d5 $ stack [
   # delay 0.5 
   # delayfb 0.3 
   # lock "<1 2>" 
--- # accelerate 4
+--  # accelerate 4
 --  # coarse 5
+--  # speed "0.7 1.4"
+--  # delay 0.5 $ delayfb 0.3 
+--  # lock "<1 2>" 
+ , whenmod 4 3 ((#accelerate 4).(#coarse 5))
 ]
+
+
+d5 $ whenmod 4 3 ((# accelerate 4) . (# coarse 5))
+  $ s "{~<clubkick:1 gabba:3>sn:1 hc*2 hc bd sn:2 hs}%16"
+    # shape 0.5
+    # hpf 60
+    # hpq 0.3
+    # delay 0.5
+    # delayfb 0.3
+    # lock "<1 2>"
+    # speed "0.7 1.4"
+
 
 --  #coarse 5
 
@@ -133,15 +176,10 @@ d8 $ s "superfm" # note "<~ 0 2 5 7 2 0 1 2>"
 
 d3 sillence
 
-d3 $ s "superhoover" <| up "c'minor(5,12) c'minor(2,5) f'minor(3,4)  d'minor2(2,7)" 
+d3 $ s "superhoover"
+  <| up (fast 2 "c'minor(5,12) c'minor(2,5) f'minor(3,4) d'minor2(2,7)")
   # octave 3
-  # accelerate "0.2"
-  # pan 0.5 
-
-
-  # accelerate "0.1"
-  # fast "3"
-
+  # accelerate 3
 
 
 hush
