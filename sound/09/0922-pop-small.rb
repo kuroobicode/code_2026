@@ -11,20 +11,21 @@ oss_dp2_struttin_a = "E:/sound/splice/Samples/packs/Dream Pops Vol.2 by Dylan Ki
 odd_dp2_wheather_g = "E:/sound/splice/Samples/packs/Dream Pops Vol.2 by Dylan Kidd/One_Stop_Shop_-_Dream_Pops_Vol._2_by_Dylan_Kidd_2/loops/melodic_loops/bass/OSS_DP2_115_electric_bass_harmonics_weather_Gmaj_bpm100.wav"
 
 
-shs_torment = "E:/sound/splice/Samples/packs/Torment - Mutilated Drums/ShamanStems_-_Torment_-_Mutilated_Drums/Drum_Loops/shs_torment_83_drum_loop_Torpedo_1_full.wav"
 pdd_dp2_constant = "E:/sound/splice/Samples/packs/Dream Pops Vol.2 by Dylan Kidd/One_Stop_Shop_-_Dream_Pops_Vol._2_by_Dylan_Kidd_2/loops/drum_loops/full_drum_loops/OSS_DP2_115_drum_snare_constant_live.wav"
+
+orbit_scratch = "E:/sound/splice/Samples/packs/Reunion - Old School Hip Hop/Effects_Vocals/FX/ORBIT_RE_FX_One_Shot_Scratch_Kick_90.wav"
 
 
 #  ###############################################################
 amp_oss_dp2_a = 1
-amp_oss_dp2_a = 0
+#amp_oss_dp2_a = 0
 live_loop :oss_dp2_a do
   sample oss_dp2_a ,amp: amp_oss_dp2_a
   sleep 32
 end
 
 amp_ukz_piano_bm = 1
-#amp_ukz_piano_bm = 0
+amp_ukz_piano_bm = 0
 live_loop :ukz_piano_bm do
   sample ukz_piano_bm ,amp: amp_ukz_piano_bm
   sample jt_pb2_bm ,amp: amp_ukz_piano_bm
@@ -32,10 +33,18 @@ live_loop :ukz_piano_bm do
 end
 
 #  ###############################################################
-
 amp_pdd_dp2_constant = 1
-#amp_pdd_dp2_constant = 0
+amp_pdd_dp2_constant = 0
 live_loop :pdd_dp2_constant do
   sample pdd_dp2_constant ,amp: amp_pdd_dp2_constant, beat_stretch: 16
   sleep 16
+end
+
+# noiz
+amp_orbit_scratch = 0.75
+#amp_orbit_scratch = 0
+live_loop :orbit_scratch do
+  sleep 14.525
+  sample orbit_scratch ,amp: amp_orbit_scratch, beat_stretch: 3, finish: 0.5
+  sleep 1.475
 end
