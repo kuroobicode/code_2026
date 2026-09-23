@@ -25,6 +25,7 @@ kmrbi_again_g = "E:/sound/splice/Samples/packs/Reconnecting - Hanz x Sem0r Vol. 
 
 
 au_sonic = "E:/sound/splice/Samples/packs/Hardgroove House & Techno/Audentity_Records_-_Hardgroove_House___Techno/Loops/Drums/Drum_Loops/Kicks/AU_HHT_140_kick_loop_clutch_sonic.wav"
+bos_hat_loop = "E:/sound/splice/Samples/packs/Trance Vision by Dave Parkinson/Black_Octopus_Sound_-_Trance_Vision_by_Dave_Parkinson/Loops/Drums_-_Loops/Drum_-_Hat_-_Loops/BOS_DPT_138_Drum_Hat_Loop_Closedclean.wav"
 
 
 #  ###############################################################
@@ -40,7 +41,7 @@ end
 #  ###############################################################
 
 amp_ds_sdc_barrens_fm = 0.5
-#amp_ds_sdc_barrens_fm = 0
+amp_ds_sdc_barrens_fm = 0
 live_loop :ds_sdc_barrens_fm do
   sample ds_sdc_barrens_fm ,amp: amp_ds_sdc_barrens_fm
   sleep 8
@@ -49,7 +50,7 @@ live_loop :ds_sdc_barrens_fm do
 end
 
 amp_mo_tenny_pad_cs = 1
-#amp_mo_tenny_pad_cs = 0
+amp_mo_tenny_pad_cs = 0
 live_loop :mo_tenny_pad_cs do
   sample mo_tenny_pad_cs ,amp: amp_mo_tenny_pad_cs
   sleep 32
@@ -59,9 +60,20 @@ end
 # kick ###############################################################
 
 amp_live_au_sonic = 0.75
-#amp_live_au_sonic = 0
+amp_live_au_sonic = 0
 live_loop :live_au_sonic do
   sample au_sonic ,amp: amp_live_au_sonic, beat_stretch: 8
+  sleep 8
+  sample au_sonic ,amp: amp_live_au_sonic, beat_stretch: 8
+  sleep 8
+end
+
+amp_bos_hat_loop = 0.5
+amp_bos_hat_loop = 0
+live_loop :bos_hat_loop do
+  sample bos_hat_loop ,amp: amp_bos_hat_loop, beat_stretch: 8
+  sleep 8
+  sample bos_hat_loop ,amp: amp_bos_hat_loop, beat_stretch: 8
   sleep 8
 end
 
