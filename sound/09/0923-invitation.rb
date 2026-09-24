@@ -22,6 +22,7 @@ mo_dt_squirrel_g = "E:/sound/splice/Samples/packs/droplets, a demotapes moment/M
 
 so_tf_g = "E:/sound/splice/Samples/packs/Nest  Timeless Futures Vol 1/SO_TF_Timeless_Futures_vol_1/Loops/Songstarters/SO_TF_140_songstarter_abandoned_courtyard_Gmaj.wav"
 kmrbi_again_g = "E:/sound/splice/Samples/packs/Reconnecting - Hanz x Sem0r Vol. 7/Komorebi_Audio_-_Reconnecting_-_Hanz_x_Sem0r_Vol._7_-_Sample_Pack/Loops/Synth_loops/KMRBI_RHS7_130_synth_loop_arp_again_Gmaj.wav"
+sd_gc_round_ds = "E:/sound/splice/Samples/packs/Gospel Chops Hip Hop Samples/Sound_Doctrine_-_Gospel_Chops/Loops/Melodic_Loops/SD_GC_75_Round_Dbmaj/SD_GC_75_pad_synth_Round_Dbmaj.wav"
 
 
 au_sonic = "E:/sound/splice/Samples/packs/Hardgroove House & Techno/Audentity_Records_-_Hardgroove_House___Techno/Loops/Drums/Drum_Loops/Kicks/AU_HHT_140_kick_loop_clutch_sonic.wav"
@@ -41,7 +42,7 @@ end
 #  ###############################################################
 
 amp_ds_sdc_barrens_fm = 0.5
-amp_ds_sdc_barrens_fm = 0
+#amp_ds_sdc_barrens_fm = 0
 live_loop :ds_sdc_barrens_fm do
   sample ds_sdc_barrens_fm ,amp: amp_ds_sdc_barrens_fm
   sleep 8
@@ -49,18 +50,27 @@ live_loop :ds_sdc_barrens_fm do
   sleep 8
 end
 
-amp_mo_tenny_pad_cs = 1
-amp_mo_tenny_pad_cs = 0
+amp_mo_tenny_pad_cs = 0.75
+#amp_mo_tenny_pad_cs = 0
 live_loop :mo_tenny_pad_cs do
   sample mo_tenny_pad_cs ,amp: amp_mo_tenny_pad_cs
   sleep 32
 end
 
+amp_sd_gc_round_ds = 0.75
+#amp_sd_gc_round_ds = 0
+live_loop :sd_gc_round_ds do
+  sleep 9
+  sample sd_gc_round_ds ,amp: amp_sd_gc_round_ds
+  sleep 23
+end
+
+
 
 # kick ###############################################################
 
 amp_live_au_sonic = 0.75
-amp_live_au_sonic = 0
+#amp_live_au_sonic = 0
 live_loop :live_au_sonic do
   sample au_sonic ,amp: amp_live_au_sonic, beat_stretch: 8
   sleep 8
@@ -69,7 +79,7 @@ live_loop :live_au_sonic do
 end
 
 amp_bos_hat_loop = 0.5
-amp_bos_hat_loop = 0
+#amp_bos_hat_loop = 0
 live_loop :bos_hat_loop do
   sample bos_hat_loop ,amp: amp_bos_hat_loop, beat_stretch: 8
   sleep 8
